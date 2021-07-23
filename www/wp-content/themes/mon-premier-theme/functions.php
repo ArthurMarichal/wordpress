@@ -83,10 +83,28 @@ add_theme_support('title-tag');
 
     add_action('wp_enqueue_scripts', 'wordpress_scripts_loader');
 
-    function wordpress_register_nav_menus()
+function monportfolio_widgets_init() {
+
+    register_sidebar(
+        array(
+            'name'          => __( 'Footer', 'Mon portfolio' ),
+            'id'            => 'sidebar-1',
+            'description'   => __( 'Add widgets here to appear in your footer.', 'Mon portfolio' ),
+            'before_widget' => '<section id="%1$s" class="widget %2$s">',
+            'after_widget'  => '</section>',
+            'before_title'  => '<h2 class="widget-title">',
+            'after_title'   => '</h2>',
+        )
+    );
+
+}
+add_action( 'widgets_init', 'monportfolio_widgets_init' );
+
+
+function wordpress_register_nav_menus()
     {
         register_nav_menus(array(
-            'main' => 'Menu'
+            'main' => 'Menu',
         ));
     }
 

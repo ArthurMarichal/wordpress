@@ -1,4 +1,4 @@
-
+$bgb: rgba(82, 25, 25, 0.44);
 $coral: coral;
 
 
@@ -9,32 +9,37 @@ body {background-image: url("https://www.institutculinaire.fr/sites/default/file
   font-family: Ubuntu;
 
 }
-@mixin row{
+@mixin flex{
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.row {
+  @include flex;
 }
 .container {
   margin: 0 300px;
-@include menu-bonjour-container;
+background-color: $bgb;
 }
 
 .menu{
   padding: 20px 0;
-@include row;
+@include flex;
   list-style: none;
   text-align: center;
   font-size: 30px;
 }
 
-@mixin menu-bonjour-container {
-  background-color: rgba(82, 25, 25, 0.44);
+.menu-bonjour-container {
+  background-color: $bgb
 
 }
 .wp-block-embed__wrapper {
   padding: 0 200px;
 }
 .text_hp, a{
-  $coral
+  color: $coral;
 }
 h1{
   color: brown;
@@ -45,5 +50,9 @@ margin: 20px;
 .size-full{
   height: auto;
   width: auto;
+}
+.breadcrumbs {
+  background-color: $bgb;
+  margin: 5px 40%;
 }
 

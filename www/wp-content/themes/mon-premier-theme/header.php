@@ -9,4 +9,9 @@
 </head>
 <body>
     <?= wp_nav_menu(['menu' => 'main']) ?>
+    <?php
+    if ( function_exists('yoast_breadcrumb') ) {
+        yoast_breadcrumb( '<p class="breadcrumbs text_hp">Vous êtes à : ','</p>' );
+    }
+    ?>
 <div class="container">
