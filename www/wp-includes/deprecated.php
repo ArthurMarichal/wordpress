@@ -3340,6 +3340,8 @@ function gd_edit_image_support($mime_type) {
 				return (imagetypes() & IMG_PNG) != 0;
 			case 'image/gif':
 				return (imagetypes() & IMG_GIF) != 0;
+			case 'image/webp':
+				return (imagetypes() & IMG_WEBP) != 0; // phpcs:ignore PHPCompatibility.Constants.NewConstants.img_webpFound
 		}
 	} else {
 		switch( $mime_type ) {
@@ -3349,6 +3351,8 @@ function gd_edit_image_support($mime_type) {
 				return function_exists('imagecreatefrompng');
 			case 'image/gif':
 				return function_exists('imagecreatefromgif');
+			case 'image/webp':
+				return function_exists('imagecreatefromwebp');
 		}
 	}
 	return false;
@@ -3805,7 +3809,7 @@ function wp_embed_handler_googlevideo( $matches, $attr, $url, $rawattr ) {
  * Retrieve path of paged template in current or parent template.
  *
  * @since 1.5.0
- * @deprecated 4.7.0 The paged.php template is no longer part of the theme template hierarchy.
+ * @deprecated 4.7.0 The single-recettes.php template is no longer part of the theme template hierarchy.
  *
  * @return string Full path to paged template file.
  */
@@ -4202,4 +4206,21 @@ function wp_sensitive_page_meta() {
 	<meta name='robots' content='noindex,noarchive' />
 	<?php
 	wp_strict_cross_origin_referrer();
+}
+
+/**
+ * Render inner blocks from the `core/columns` block for generating an excerpt.
+ *
+ * @since 5.2.0
+ * @deprecated 5.8.0
+ *
+ * @access private
+ *
+ * @param array $columns        The parsed columns block.
+ * @param array $allowed_blocks The list of allowed inner blocks.
+ * @return string The rendered inner blocks.
+ */
+function _excerpt_render_inner_columns_blocks( $columns, $allowed_blocks ) {
+	_deprecated_function( __FUNCTION__, '5.8.0', '_excerpt_render_inner_blocks()' );
+	return _excerpt_render_inner_blocks( $columns, $allowed_blocks );
 }

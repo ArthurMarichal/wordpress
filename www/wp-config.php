@@ -27,13 +27,13 @@ define('FORCE_SSL_ADMIN', true);
 
 // ** Réglages MySQL - Votre hébergeur doit vous fournir ces informations. ** //
 /** Nom de la base de données de WordPress. */
-define( 'DB_NAME', 'wordpress' );
+define( 'DB_NAME', 'arthur_m_' );
 
 /** Utilisateur de la base de données MySQL. */
-define( 'DB_USER', 'root' );
+define( 'DB_USER', 'arthur.m' );
 
 /** Mot de passe de la base de données MySQL. */
-define( 'DB_PASSWORD', 'password' );
+define( 'DB_PASSWORD', 'Nnz9d99$' );
 
 /** Adresse de l’hébergement MySQL. */
 define( 'DB_HOST', 'db' );
