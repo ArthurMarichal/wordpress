@@ -1,8 +1,8 @@
 <?php
-if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) &&
-$_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https') {
-$_SERVER['HTTPS'] = 'on';
-define('FORCE_SSL_ADMIN', true);
+
+if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https') {
+    $_SERVER['HTTPS'] = 'on';
+    define('FORCE_SSL_ADMIN', true);
 }
 /**
  * La configuration de base de votre installation WordPress.
@@ -27,13 +27,13 @@ define('FORCE_SSL_ADMIN', true);
 
 // ** Réglages MySQL - Votre hébergeur doit vous fournir ces informations. ** //
 /** Nom de la base de données de WordPress. */
-define( 'DB_NAME', 'arthur_m_' );
+define( 'DB_NAME', 'wordpress' );
 
 /** Utilisateur de la base de données MySQL. */
-define( 'DB_USER', 'arthur.m' );
+define( 'DB_USER', 'root' );
 
 /** Mot de passe de la base de données MySQL. */
-define( 'DB_PASSWORD', 'Nnz9d99$' );
+define( 'DB_PASSWORD', 'password' );
 
 /** Adresse de l’hébergement MySQL. */
 define( 'DB_HOST', 'db' );
